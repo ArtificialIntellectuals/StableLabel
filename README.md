@@ -4,6 +4,10 @@
 
 This repository contains code and resources for a project focused on automated cleaning of datasets for image classification tasks. The project employs various techniques, including prompt engineering, feature engineering, and supervised machine learning, to enhance the quality of labeled datasets used for training image classification models.
 
+The project is conducted as part of the the course Foundation Models at the University of Stuttgart. 
+
+Note: The project has been conducted on Google Colab, this is a final commit of the finished solution for course evaluation purposes.
+
 ## Key Features
 
 - **Prompt Engineering:** Utilize the multi-modal capabilities of ALIGN [1] or CLIP [2] to judge the correspondence between text labels and images. The experiments focus on addressing challenges in representing "not a" cases.
@@ -15,20 +19,22 @@ This repository contains code and resources for a project focused on automated c
 ## Repository Structure
 
 - `results/`: Contains the results of the different experiments.
-
-- `datasets/`: Includes all dataset related information, e.g. indices of mislabelled instances or produced embeddings (both of textual descriptions and of images).
-
-  Please, note that we do not publish the dataset we use for the experiments directly, but it can be accessed through https://www.kaggle.com/c/dogs-vs-cats .
-
 - `helper_scripts/`: Miscellaneous. Used as assistance during the development phase of the solutions.
+- `pollution_files.txt`: Includes ids of the identified pollution images in the used datasets [3]. Used for evaluation purposes.
 
 ## Getting Started
 
 1. Clone this repository to your local machine.
-2. Download the dataset from https://www.kaggle.com/c/dogs-vs-cats
+2. Download the dataset from https://www.kaggle.com/c/dogs-vs-cats  [3]
 3. Explore the notebooks in the main directory to understand the available scripts.
 4. Use the provided datasets or replace them with your own data as needed.
-5. Run the different notebooks  to perform dataset cleaning using the chosen strategy. Each notebook offers a set of settings to adjust the script to the specific case at hand.
+5. Run the different notebooks  to perform dataset cleaning using the chosen strategy. Each notebook offers a set of settings to adjust the script to the specific case at hand. Settings include:
+   - Dataset directory;
+   - Path to embeddings;
+   - Model choice;
+   - Strategy choice (for similarity analysis only);
+   - Label choice (cat or dog);
+   - Path for storing results from the experiments.
 
 ## Contribution Guidelines
 
@@ -42,7 +48,7 @@ Contributions to this project are welcome! If you have ideas for improvements, n
 
 ## Contact
 
-For any questions or inquiries about the project, feel free to contact us at ...
+Research project by Anna-Maria Halacheva, Boshra Ariguib, Manuel Schwartz.
 
 
 
@@ -57,3 +63,5 @@ models from natural language supervision. In International conference on machine
 Sung, Zhen Li, and Tom Duerig. Scaling up visual and vision-language representation learning
 with noisy text supervision. CoRR, abs/2102.05918, 2021. URL https://arxiv.org/abs/
 2102.0591
+
+[3] Will Cukierski. Dogs vs. cats, 2013. URL https://kaggle.com/competitions/dogs-vs-cats.
